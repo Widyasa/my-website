@@ -1,24 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, JetBrains_Mono } from "next/font/google"
+import { GeistSans } from "geist/font/sans"
+import { GeistMono } from "geist/font/mono"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains-mono",
-  display: "swap",
-})
-
 export const metadata: Metadata = {
   title: "Widya Yasa - Full Stack Developer",
-  description: "Personal portfolio of WIdya Yasa, a passionate full-stack developer and Game Developer.",
+  description: "Personal portfolio of Widya Yasa, a passionate full-stack developer and Game Developer.",
   icons: {
     icon: 'logo.svg'
   }
@@ -30,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${inter.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
-      <body className="min-h-screen font-sans theme-transition">
+    <html lang="en" className={`scroll-smooth ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+      <body className="min-h-screen font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
           {children}
            <div className="mt-12 pt-6 border-t border-border text-center pb-6">

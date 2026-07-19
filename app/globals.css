@@ -1,357 +1,120 @@
 @import "tailwindcss";
 
-
 /* ===============================
-   Tailwind 4 Custom Properties
+   Design tokens — monochrome + indigo
+   Restrained strategy: tinted neutrals
+   (chroma toward hue 270), one indigo
+   accent used sparingly. OKLCH throughout.
    =============================== */
 
 @theme {
-  /* Font Configuration */
-  --font-family-sans: var(--font-inter), system-ui, sans-serif;
-  --font-family-mono: var(--font-jetbrains-mono), Consolas, monospace;
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 
-  /* Color System - Light Mode */
-  --color-background: hsl(0 0% 100%); /* Tambahkan hsl() */
-  --color-foreground: hsl(0 0% 3.9%); /* Tambahkan hsl() */
-  --color-card: hsl(0 0% 100%);
-  --color-card-foreground: hsl(0 0% 3.9%);
-  --color-primary: hsl(0 0% 9%);
-  --color-primary-foreground: hsl(0 0% 98%);
-  --color-secondary: hsl(0 0% 96.1%);
-  --color-secondary-foreground: hsl(0 0% 9%);
-  --color-muted: hsl(0 0% 96.1%);
-  --color-muted-foreground: hsl(0 0% 45.1%);
-  --color-accent: hsl(0 0% 96.1%);
-  --color-accent-foreground: hsl(0 0% 9%);
-  --color-border: hsl(0 0% 89.8%);
-  --color-input: hsl(0 0% 89.8%);
-  --color-ring: hsl(0 0% 3.9%);
-  --color-destructive: hsl(0 84.2% 60.2%);
-  --color-destructive-foreground: hsl(0 0% 98%);
+  /* Light mode (default) */
+  --color-background: oklch(1 0 0);
+  --color-foreground: oklch(0.21 0.006 270);
+  --color-card: oklch(1 0 0);
+  --color-card-foreground: oklch(0.21 0.006 270);
+  --color-primary: oklch(0.21 0.006 270);
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-secondary: oklch(0.965 0.004 270);
+  --color-secondary-foreground: oklch(0.21 0.006 270);
+  --color-muted: oklch(0.965 0.004 270);
+  --color-muted-foreground: oklch(0.44 0.008 270);
+  --color-accent: oklch(0.511 0.2 270);
+  --color-accent-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.905 0.005 270);
+  --color-input: oklch(0.905 0.005 270);
+  --color-ring: oklch(0.511 0.2 270);
+  --color-destructive: oklch(0.577 0.215 27);
+  --color-destructive-foreground: oklch(0.985 0 0);
 
-  /* Gray Scale */
-  --color-gray-50: hsl(0 0% 98%);
-  --color-gray-100: hsl(0 0% 96.1%);
-  --color-gray-200: hsl(0 0% 89.8%);
-  --color-gray-300: hsl(0 0% 83.1%);
-  --color-gray-400: hsl(0 0% 63.9%);
-  --color-gray-500: hsl(0 0% 45.1%);
-  --color-gray-600: hsl(0 0% 32.2%);
-  --color-gray-700: hsl(0 0% 25.1%);
-  --color-gray-750: hsl(0 0% 22.7%);
-  --color-gray-800: hsl(0 0% 14.9%);
-  --color-gray-850: hsl(0 0% 12.2%);
-  --color-gray-900: hsl(0 0% 9%);
-  --color-gray-950: hsl(0 0% 3.9%);
-
-  /* Spacing Scale (no change needed) */
-  --spacing-px: 1px;
-  --spacing-0: 0px;
-  --spacing-0_5: 0.125rem;
-  --spacing-1: 0.25rem;
-  --spacing-1_5: 0.375rem;
-  --spacing-2: 0.5rem;
-  --spacing-2_5: 0.625rem;
-  --spacing-3: 0.75rem;
-  --spacing-3_5: 0.875rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.25rem;
-  --spacing-6: 1.5rem;
-  --spacing-7: 1.75rem;
-  --spacing-8: 2rem;
-  --spacing-9: 2.25rem;
-  --spacing-10: 2.5rem;
-  --spacing-11: 2.75rem;
-  --spacing-12: 3rem;
-  --spacing-14: 3.5rem;
-  --spacing-16: 4rem;
-  --spacing-20: 5rem;
-  --spacing-24: 6rem;
-  --spacing-28: 7rem;
-  --spacing-32: 8rem;
-  --spacing-36: 9rem;
-  --spacing-40: 10rem;
-  --spacing-44: 11rem;
-  --spacing-48: 12rem;
-  --spacing-52: 13rem;
-  --spacing-56: 14rem;
-  --spacing-60: 15rem;
-  --spacing-64: 16rem;
-  --spacing-72: 18rem;
-  --spacing-80: 20rem;
-  --spacing-96: 24rem;
-
-  /* Border Radius (no change needed) */
-  --radius-none: 0px;
-  --radius-sm: 0.125rem;
-  --radius: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 0.75rem;
-  --radius-2xl: 1rem;
-  --radius-3xl: 1.5rem;
-  --radius-full: 9999px;
-
-  /* Shadows (no change needed) */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
-
-  /* Breakpoints (no change needed) */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
+  /* Soft accent tint — glows, selections */
+  --color-accent-soft: oklch(0.511 0.2 270 / 0.09);
+  --color-accent-softer: oklch(0.511 0.2 270 / 0.05);
 }
 
 .dark {
-  --color-background: hsl(0 0% 3.9%); /* Tambahkan hsl() */
-  --color-foreground: hsl(0 0% 98%); /* Tambahkan hsl() */
-  --color-card: hsl(0 0% 3.9%);
-  --color-card-foreground: hsl(0 0% 98%);
-  --color-primary: hsl(0 0% 98%);
-  --color-primary-foreground: hsl(0 0% 9%);
-  --color-secondary: hsl(0 0% 14.9%);
-  --color-secondary-foreground: hsl(0 0% 98%);
-  --color-muted: hsl(0 0% 14.9%);
-  --color-muted-foreground: hsl(0 0% 63.9%);
-  --color-accent: hsl(0 0% 14.9%);
-  --color-accent-foreground: hsl(0 0% 98%);
-  --color-border: hsl(0 0% 14.9%);
-  --color-input: hsl(0 0% 14.9%);
-  --color-ring: hsl(0 0% 83.1%);
-  --color-destructive: hsl(0 62.8% 30.6%);
-  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-background: oklch(0.155 0.006 270);
+  --color-foreground: oklch(0.97 0.002 270);
+  --color-card: oklch(0.185 0.007 270);
+  --color-card-foreground: oklch(0.97 0.002 270);
+  --color-primary: oklch(0.97 0.002 270);
+  --color-primary-foreground: oklch(0.21 0.006 270);
+  --color-secondary: oklch(0.235 0.008 270);
+  --color-secondary-foreground: oklch(0.97 0.002 270);
+  --color-muted: oklch(0.235 0.008 270);
+  --color-muted-foreground: oklch(0.71 0.008 270);
+  --color-accent: oklch(0.56 0.2 270);
+  --color-accent-foreground: oklch(0.985 0 0);
+  --color-border: oklch(0.27 0.008 270);
+  --color-input: oklch(0.27 0.008 270);
+  --color-ring: oklch(0.56 0.2 270);
+  --color-destructive: oklch(0.5 0.18 27);
+  --color-destructive-foreground: oklch(0.985 0 0);
+
+  --color-accent-soft: oklch(0.56 0.2 270 / 0.14);
+  --color-accent-softer: oklch(0.56 0.2 270 / 0.07);
 }
 
 /* ===============================
-   Tailwind Base Layer Overrides
+   Base
    =============================== */
 
 @layer base {
   html {
     scroll-behavior: smooth;
+    background-color: var(--color-background);
   }
 
   body {
-    /* Pastikan pemanggilan menggunakan hsl(var(--color-background)) */
-    @apply bg-[hsl(var(--color-background))] text-[hsl(var(--color-foreground))] antialiased;
+    @apply text-foreground antialiased;
+    /* Static indigo glow — no animation, reduced-motion safe */
+    background:
+      radial-gradient(ellipse 70% 45% at 50% -15%, var(--color-accent-soft), transparent 70%),
+      radial-gradient(ellipse 45% 35% at 85% 110%, var(--color-accent-softer), transparent 70%),
+      var(--color-background);
+    background-attachment: fixed;
     transition: background-color 0.3s, color 0.3s;
   }
 
   * {
-    /* Pastikan pemanggilan menggunakan hsl(var(--color-border)) */
-    @apply border-[hsl(var(--color-border))];
+    @apply border-border;
     transition: border-color 0.3s;
   }
 
+  h1, h2, h3 {
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
 
-
-  .theme-transition {
-    transition:
-      background-color 0.3s,
-      color 0.3s,
-      border-color 0.3s,
-      box-shadow 0.3s;
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-accent-foreground);
   }
 }
 
-/* ... Kode Anda yang lain ... */
-
 /* ===============================
-   Animations
+   Entrance motion
    =============================== */
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(16px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.5; }
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(-25%);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-  }
-  50% {
-    transform: none;
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-/* ===============================
-   Utilities & Components
-   =============================== */
-
-.animate-fade-in { animation: fadeIn 0.5s ease-in-out; }
-.animate-slide-up { animation: slideUp 0.5s ease-out; }
-.animate-fade-in-up { animation: fadeInUp 0.6s ease-out; }
-.animate-pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-.animate-spin { animation: spin 1s linear infinite; }
-.animate-bounce { animation: bounce 1s infinite; }
-
-/* ===============================
-   Prose
-   =============================== */
-
-.prose {
-  color: hsl(var(--color-foreground));
-  max-width: none;
-}
-
-.prose p {
-  margin: 1.25em 0;
-  line-height: 1.75;
-}
-
-.prose h1, .prose h2, .prose h3 {
-  color: hsl(var(--color-foreground));
-  font-weight: 800;
-}
-
-.prose h1 { font-size: 2.25em; margin-bottom: 0.9em; line-height: 1.1; }
-.prose h2 { font-size: 1.5em; margin-top: 2em; margin-bottom: 1em; line-height: 1.33; }
-.prose h3 { font-size: 1.25em; margin-top: 1.6em; margin-bottom: 0.6em; line-height: 1.6; }
-
-.prose strong { font-weight: 600; }
-.prose a {
-  color: hsl(var(--color-primary));
-  text-decoration: underline;
-  font-weight: 500;
-}
-.prose a:hover { color: hsl(var(--color-muted-foreground)); }
-
-.prose code {
-  background-color: hsl(var(--color-muted));
-  font-family: var(--font-family-mono);
-  padding: 0.25rem 0.375rem;
-  border-radius: 0.25rem;
-  font-size: 0.875em;
-  font-weight: 600;
-}
-
-.prose pre {
-  background-color: hsl(var(--color-muted));
-  padding: 0.85em 1.15em;
-  border-radius: 0.375rem;
-  overflow-x: auto;
-  font-family: var(--font-family-mono);
-  font-size: 0.875em;
-  line-height: 1.7;
-  margin: 1.7em 0;
-}
-
-.prose blockquote {
-  font-style: italic;
-  border-left: 0.25rem solid hsl(var(--color-border));
-  padding-left: 1em;
-  margin: 1.6em 0;
-}
-
-.prose ul, .prose ol {
-  margin: 1.25em 0;
-  padding-left: 1.625em;
-}
-
-.prose li {
-  margin: 0.5em 0;
-}
-
-/* ===============================
-   Custom Utilities
-   =============================== */
-
-.text-balance { text-wrap: balance; }
-.text-pretty { text-wrap: pretty; }
-
-.focus-visible\:outline-none:focus-visible {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-.focus-visible\:ring-1:focus-visible {
-  --tw-ring-shadow: 0 0 0 1px hsl(var(--color-ring));
-  box-shadow: var(--tw-ring-shadow);
-}
-
-.focus-visible\:ring-ring:focus-visible {
-  --tw-ring-color: hsl(var(--color-ring));
-}
-
-/* ===============================
-   Scrollbar Styling
-   =============================== */
-
-.scrollbar-thin {
-  scrollbar-width: thin;
-}
-.scrollbar-thin::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: hsl(var(--color-muted));
-}
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: hsl(var(--color-muted-foreground));
-  border-radius: 3px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--color-foreground));
-}
-
-/* ===============================
-   Selection Styling
-   =============================== */
-
-::selection {
-  background-color: hsl(var(--color-primary) / 0.2);
-  color: hsl(var(--color-foreground));
-}
-
-/* ===============================
-   Print & Accessibility
-   =============================== */
-
-@media print {
-  .no-print {
-    display: none !important;
-  }
-  body {
-    background: white !important;
-    color: black !important;
-  }
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
   }
 }
