@@ -8,7 +8,7 @@ export default function ProfileSection() {
     <section className="text-left mb-16 md:mt-10 mt-10">
       <AnimatedSection>
         <div className="mb-8">
-          <h1 className="text-4xl md:text-5xl max-w-2xl mx-auto font-bold mb-4 bg-linear-to-r from-foreground to-muted-foreground bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-5xl max-w-2xl mx-auto font-bold mb-4 text-foreground">
             Widya Yasa
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -26,17 +26,17 @@ export default function ProfileSection() {
           </div>
           <p className="text-muted-foreground mt-5">My stack</p>
           <div className="flex flex-wrap items-center gap-2">
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/typescript.svg"
-                alt="Laravel"
+                alt="TypeScript"
                 width={16}
                 height={16}
                 className="inline-block mr-1"
               />
               Typescript
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/react.svg"
                 alt="React"
@@ -46,17 +46,17 @@ export default function ProfileSection() {
               />
               React
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/vue.svg"
-                alt="vue"
+                alt="Vue"
                 width={16}
                 height={16}
                 className="inline-block mr-1"
               />
               Vue
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/nuxtjs.svg"
                 alt="Nuxt.js"
@@ -66,7 +66,7 @@ export default function ProfileSection() {
               />
               Nuxt.js
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/nextjs.svg"
                 alt="Next.js"
@@ -76,7 +76,7 @@ export default function ProfileSection() {
               />
               Next.js
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/laravel.svg"
                 alt="Laravel"
@@ -86,7 +86,7 @@ export default function ProfileSection() {
               />
               Laravel
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/supabase.svg"
                 alt="Supabase"
@@ -96,7 +96,7 @@ export default function ProfileSection() {
               />
               Supabase
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/unity.svg"
                 alt="Unity"
@@ -106,7 +106,7 @@ export default function ProfileSection() {
               />
               Unity
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/prisma.svg"
                 alt="Prisma"
@@ -116,7 +116,7 @@ export default function ProfileSection() {
               />
               Prisma
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/postgres.svg"
                 alt="PostgreSQL"
@@ -126,7 +126,7 @@ export default function ProfileSection() {
               />
               PostgreSQL
             </span>
-            <span className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <span className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/mysql.svg"
                 alt="MySQL"
@@ -139,7 +139,7 @@ export default function ProfileSection() {
           </div>
           <p className="text-muted-foreground mt-5">Find Me At</p>
           <div className="flex flex-wrap items-center gap-2">
-            <Link target="_blank" href={'https://github.com/widyasa'} className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <Link target="_blank" href={'https://github.com/widyasa'} className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/github.svg"
                 alt="Github"
@@ -149,7 +149,7 @@ export default function ProfileSection() {
               />
               Github
             </Link>
-            <Link target="_blank" href={'https://www.linkedin.com/in/widya-yasa/'} className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <Link target="_blank" href={'https://www.linkedin.com/in/widya-yasa/'} className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/linkedin.svg"
                 alt="Linkedin"
@@ -159,7 +159,7 @@ export default function ProfileSection() {
               />
               LinkedIn
             </Link>
-            <Link target="_blank" href={'https://www.instagram.com/widya_yasaa/'} className={cn("bg-accent text-accent-foreground px-2 py-1 rounded text-sm gap-1 flex items-center")}>
+            <Link target="_blank" href={'https://www.instagram.com/widya_yasaa/'} className={cn("bg-secondary text-secondary-foreground transition-colors hover:bg-accent-soft px-2 py-1 rounded text-sm gap-1 flex items-center")}>
               <Image
                 src="/img/instagram.svg"
                 alt="Instagram"
