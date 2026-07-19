@@ -14,18 +14,30 @@ export function ThemeToggle() {
   }, [])
 
   if (!mounted) {
-    return null
+    return (
+      <Button
+        variant="outline"
+        size="icon"
+        className="relative h-9 w-9"
+        aria-label="Toggle theme"
+        disabled
+      >
+        <span className="sr-only">Toggle theme</span>
+      </Button>
+    )
   }
+
+  const isLight = theme === "light"
 
   return (
     <Button
       variant="outline"
       size="icon"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="transition-all duration-300 ease-in-out"
+      onClick={() => setTheme(isLight ? "dark" : "light")}
+      className="relative h-9 w-9 transition-colors"
+      aria-label="Toggle theme"
     >
-      <Sun className="h-4 w-4 rotate-0 scale-100 transition-all duration-300 ease-in-out dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all duration-300 ease-in-out dark:rotate-0 dark:scale-100" />
+      {isLight ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
       <span className="sr-only">Toggle theme</span>
     </Button>
   )

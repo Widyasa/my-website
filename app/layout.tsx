@@ -23,19 +23,6 @@ export default function RootLayout({
       <body className="min-h-screen font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange={false}>
           {children}
-           <div className="mt-12 pt-6 border-t border-border text-center pb-6">
-            <p className="text-xs text-muted-foreground">
-              © 2025 Widya Yasa. Website inspired by{" "}
-              <a
-                href="https://antfu.me"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-muted-foreground underline transition-colors duration-300"
-              >
-                antfu.me
-              </a>
-            </p>
-          </div>
         </ThemeProvider>
       </body>
     </html>
