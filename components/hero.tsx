@@ -1,20 +1,17 @@
 "use client"
 
-import { motion, useReducedMotion } from "framer-motion"
+import { motion } from "framer-motion"
 import { ArrowRight, Mail } from "lucide-react"
 import Link from "next/link"
 
 export default function Hero() {
-  const shouldReduceMotion = useReducedMotion()
 
-  const transition = shouldReduceMotion
-    ? { duration: 0 }
-    : { duration: 0.6, ease: "easeOut" as const }
+  const transition = { duration: 0.6, ease: "easeOut" as const }
 
   return (
     <section className="min-h-[calc(100vh-7rem)] flex flex-col justify-center py-16 md:py-24">
       <motion.div
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={transition}
         className="space-y-6"
@@ -29,9 +26,9 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ ...transition, delay: shouldReduceMotion ? 0 : 0.1 }}
+        transition={{ ...transition, delay: 0.1 }}
         className="mt-10 flex flex-wrap gap-4"
       >
         <Link

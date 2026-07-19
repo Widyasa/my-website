@@ -1,31 +1,25 @@
 "use client"
 
-import { motion, useReducedMotion } from "framer-motion"
+import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { ExternalLink, Github } from "lucide-react"
 import type { Project } from "@/lib/projects"
-import { cn } from "@/lib/utils"
 
 interface ProjectCardProps {
   project: Project
   index?: number
 }
 
-export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
-  const shouldReduceMotion = useReducedMotion()
-  const transition = {
-    duration: shouldReduceMotion ? 0 : 0.5,
-    delay: shouldReduceMotion ? 0 : index * 0.08,
-    ease: "easeOut" as const,
-  }
+const transition = { duration: 0.5, ease: "easeOut" as const }
 
+export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   return (
     <motion.article
-      initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
-      transition={transition}
+      transition={{ ...transition, delay: index * 0.08 }}
       className="group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-colors hover:border-accent/50"
     >
       <div className="relative aspect-[16/10] bg-secondary overflow-hidden">

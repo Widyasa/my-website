@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 import { cn } from "@/lib/utils"
@@ -15,6 +15,11 @@ const navigation = [
 export default function AppHeader() {
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-md">
@@ -28,7 +33,7 @@ export default function AppHeader() {
 
         <div className="hidden md:flex items-center gap-1">
           {navigation.map((item) => {
-            const isActive = pathname === item.href
+            const isActive = mounted && pathname === item.href
             return (
               <Link
                 key={item.name}
@@ -67,7 +72,7 @@ export default function AppHeader() {
         <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-md">
           <div className="max-w-4xl mx-auto px-6 py-4 flex flex-col gap-2">
             {navigation.map((item) => {
-              const isActive = pathname === item.href
+              const isActive = mounted && pathname === item.href
               return (
                 <Link
                   key={item.name}

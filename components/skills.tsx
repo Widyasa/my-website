@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useReducedMotion } from "framer-motion"
+import { motion } from "framer-motion"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
@@ -36,13 +36,12 @@ const skillGroups = [
 ]
 
 export default function Skills() {
-  const shouldReduceMotion = useReducedMotion()
-  const transition = { duration: shouldReduceMotion ? 0 : 0.6, ease: "easeOut" as const }
+  const transition = { duration: 0.6, ease: "easeOut" as const }
 
   return (
     <section id="skills" className="py-20 md:py-28 border-t border-border">
       <motion.div
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={transition}
@@ -59,12 +58,12 @@ export default function Skills() {
         {skillGroups.map((group, groupIndex) => (
           <motion.div
             key={group.label}
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{
               ...transition,
-              delay: shouldReduceMotion ? 0 : groupIndex * 0.08,
+              delay: groupIndex * 0.08,
             }}
           >
             <h3 className="text-sm font-mono uppercase tracking-wider text-muted-foreground mb-4">

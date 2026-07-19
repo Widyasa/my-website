@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion, useReducedMotion } from "framer-motion"
+import { motion } from "framer-motion"
 import { Check, Copy, Github, Instagram, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 
@@ -15,8 +15,7 @@ const email = "widya@example.com"
 
 export default function ContactCTA() {
   const [copied, setCopied] = useState(false)
-  const shouldReduceMotion = useReducedMotion()
-  const transition = { duration: shouldReduceMotion ? 0 : 0.6, ease: "easeOut" as const }
+  const transition = { duration: 0.6, ease: "easeOut" as const }
 
   const handleCopy = async () => {
     try {
@@ -31,7 +30,7 @@ export default function ContactCTA() {
   return (
     <section id="contact" className="py-20 md:py-28 border-t border-border">
       <motion.div
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={transition}

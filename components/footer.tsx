@@ -54,7 +54,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 pt-6 border-t border-border text-center">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground" suppressHydrationWarning>
             © {new Date().getFullYear()} Widya Yasa. All rights reserved.
           </p>
         </div>

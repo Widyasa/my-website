@@ -1,15 +1,14 @@
 "use client"
 
-import { motion, useReducedMotion } from "framer-motion"
+import { motion } from "framer-motion"
 
 export default function About() {
-  const shouldReduceMotion = useReducedMotion()
-  const transition = { duration: shouldReduceMotion ? 0 : 0.6, ease: "easeOut" as const }
+  const transition = { duration: 0.6, ease: "easeOut" as const }
 
   return (
     <section id="about" className="py-20 md:py-28 border-t border-border">
       <motion.div
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={transition}
@@ -20,10 +19,10 @@ export default function About() {
       </motion.div>
 
       <motion.div
-        initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 20 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ ...transition, delay: shouldReduceMotion ? 0 : 0.1 }}
+        transition={{ ...transition, delay: 0.1 }}
         className="mt-8 grid gap-6 text-muted-foreground leading-relaxed md:grid-cols-2"
       >
         <p>
