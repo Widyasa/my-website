@@ -1,0 +1,281 @@
+# Instincts generated from https://github.com/Widyasa/my-website
+# Generated: 2026-07-19T12:13:54.522Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: my-website-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Widyasa/my-website
+---
+
+# My Website Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: chore, feat, docs
+
+## Evidence
+
+- 3 commits analyzed
+- Detected conventional commit pattern
+- Examples: chore: remove dead routes, unused deps and shadcn scaffold (#2), feat: design foundation — Geist, OKLCH indigo tokens, static glow (#1)
+
+---
+id: my-website-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Widyasa/my-website
+---
+
+# My Website Commit Length
+
+## Action
+
+Write moderate-length commit messages (~61 characters)
+
+## Evidence
+
+- Average commit message length: 61 chars
+- Based on 3 commits
+
+---
+id: my-website-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Widyasa/my-website
+---
+
+# My Website Naming Files
+
+## Action
+
+Use camelCase naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: camelCase
+
+---
+id: my-website-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Widyasa/my-website
+---
+
+# My Website Export Style
+
+## Action
+
+Prefer default exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: default
+
+---
+id: my-website-test-separate
+trigger: "when writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Widyasa/my-website
+---
+
+# My Website Test Separate
+
+## Action
+
+Place tests in the tests/ or __tests__/ directory, mirroring src structure
+
+## Evidence
+
+- Separate test directory pattern detected
+- Tests live in dedicated test folders
+
+---
+id: my-website-instinct-file-naming-camelCase
+trigger: "When creating a new file in the codebase"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Widyasa/my-website
+---
+
+# My Website Instinct File Naming CamelCase
+
+## Action
+
+Name the file using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.files
+
+---
+id: my-website-instinct-function-naming-camelCase
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Widyasa/my-website
+---
+
+# My Website Instinct Function Naming CamelCase
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions
+
+---
+id: my-website-instinct-class-naming-PascalCase
+trigger: "When defining a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Widyasa/my-website
+---
+
+# My Website Instinct Class Naming PascalCase
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes
+
+---
+id: my-website-instinct-constant-naming-SCREAMING_SNAKE_CASE
+trigger: "When declaring a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Widyasa/my-website
+---
+
+# My Website Instinct Constant Naming SCREAMING_SNAKE_CASE
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants
+
+---
+id: my-website-instinct-import-style-mixed
+trigger: "When importing modules"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: Widyasa/my-website
+---
+
+# My Website Instinct Import Style Mixed
+
+## Action
+
+Use both named and default imports as appropriate
+
+## Evidence
+
+- Pattern in importStyle: mixed
+
+---
+id: my-website-instinct-export-style-default
+trigger: "When exporting modules or components"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: Widyasa/my-website
+---
+
+# My Website Instinct Export Style Default
+
+## Action
+
+Prefer default exports
+
+## Evidence
+
+- Pattern in exportStyle: default
+
+---
+id: my-website-instinct-commit-format-conventional
+trigger: "When writing a commit message"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Widyasa/my-website
+---
+
+# My Website Instinct Commit Format Conventional
+
+## Action
+
+Format the commit message using the Conventional Commits style (e.g., 'feat:', 'chore:', 'docs:')
+
+## Evidence
+
+- Seen in commit: 'chore: remove dead routes, unused deps and shadcn scaffold (#2)'
+- Seen in commit: 'feat: design foundation — Geist, OKLCH indigo tokens, static glow (#1)'
+- Seen in commit: 'docs: add PRODUCT.md, DESIGN.md, live-mode config'
+- Pattern in commits.prefixes
+
+---
+id: my-website-instinct-commit-length-moderate
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: Widyasa/my-website
+---
+
+# My Website Instinct Commit Length Moderate
+
+## Action
+
+Keep the commit message concise, around 60 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength
+
+---
+id: my-website-instinct-test-location-separate
+trigger: "When adding new tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Widyasa/my-website
+---
+
+# My Website Instinct Test Location Separate
+
+## Action
+
+Place test files in a separate directory from source files
+
+## Evidence
+
+- Pattern in architecture.folderStructure.testLocation: separate
+
